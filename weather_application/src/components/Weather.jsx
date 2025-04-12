@@ -20,7 +20,7 @@ function Weather() {
     if (!city) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/weather?city=${city}`);
+      const response = await fetch(`https://weather-applciation-afford.onrender.com/weather?city=${city}`);
       const data = await response.json();
       setWeatherData(data);
       console.log("Weather Data:", data);
@@ -68,7 +68,7 @@ function Weather() {
       {weatherData && (
         <>
           <img src={icon} alt='' className='weather-icon' />
-          <p className='temperature'>{Math.round(weatherData.main.temp)} K</p>
+          <p className='temperature'>{Math.round(weatherData.main.temp)} °C</p>
           <p className='location'>{weatherData.name}</p>
 
           <div className='weather-data'>
