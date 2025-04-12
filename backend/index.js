@@ -7,6 +7,9 @@ import dotenv from "dotenv"
 // const cors = require('cors');
 // require('dotenv').config();
 
+dotenv.config();
+
+
 const app = express();
 app.use(cors());
 

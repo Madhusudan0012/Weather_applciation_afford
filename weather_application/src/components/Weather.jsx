@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import './Weather.css';
 
+import './Weather.css';
+// import React from 'react';
 import search_icon from '../assets/search.png';
 import clear_icon from '../assets/clear.png';
 import cloud_icon from '../assets/cloud.png';
@@ -9,6 +9,7 @@ import humidity_icon from '../assets/humidity.png';
 import rain_icon from '../assets/rain.png';
 import snow_icon from '../assets/snow.png';
 import wind_icon from '../assets/wind.png';
+import { useState } from 'react';
 
 function Weather() {
   const [city, setCity] = useState('');
@@ -22,6 +23,8 @@ function Weather() {
       const response = await fetch(`http://localhost:5000/weather?city=${city}`);
       const data = await response.json();
       setWeatherData(data);
+      console.log("Weather Data:", data);
+
 
       const weather = data.weather[0].main;
 
@@ -65,7 +68,7 @@ function Weather() {
       {weatherData && (
         <>
           <img src={icon} alt='' className='weather-icon' />
-          <p className='temperature'>{Math.round(weatherData.main.temp)}°C</p>
+          <p className='temperature'>{Math.round(weatherData.main.temp)} K</p>
           <p className='location'>{weatherData.name}</p>
 
           <div className='weather-data'>

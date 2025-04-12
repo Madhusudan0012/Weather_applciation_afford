@@ -1,4 +1,7 @@
 .weather{
+    width : 400px;
+    max-width: 90%;
+    margin: auto;
     place-self :center;
     padding : 40px;
     border-radius : 10px ;
@@ -49,11 +52,14 @@
 
 }
 .weather-data{
+
     width: 100%;
+    gap :20px;
+    flex-wrap : wrap;
     margin-top : 40px;
     color : #fff;
     display : flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .weather-data  .col{
     display: flex;
